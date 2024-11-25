@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>濮院封面</title>
+		<link rel="stylesheet" href="css/main.css" type="text/css">
+		<style>
+			html,body{height:100%;}
+			body{				
+				display:flex;
+				flex-direction: column;	
+			}
+			body>* {	
+				width:100%;			
+				min-width: 640px;
+				margin-top:5px;	
+				margin: 0 auto;
+			}			
+			section{
+				flex:1;
+			}
+			.links{
+			        margin-top:0px;
+			      	line-height:0px;
+					display: flex;
+					justify-content: center;
+			}
+			 #myImage {
+			            width: 200px;
+			            height: auto;
+			            cursor: pointer;
+			            transition: transform 0.2s, box-shadow 0.2s;
+			        }
+			 
+			        #myImage.pressed {
+			            transform: scale(0.95);
+			            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+			        }
+		</style>
+	</head>
+	<body>
+		<img id="myImage" src="img/封面1.jpg" alt="Click me!">
+		 
+		    <script type="text/javascript">
+		        document.addEventListener('DOMContentLoaded', function() {
+		            var myImage = document.getElementById('myImage');
+		            myImage.addEventListener('mousedown', function() {
+		                myImage.classList.add('pressed');
+		            });
+		            myImage.addEventListener('mouseup', function() {
+		                setTimeout(function() {
+		                    if (!myImage.matches(':active')) {
+		                        myImage.classList.remove('pressed');
+		                        window.location.href = 'https://meaning-l.github.io/Beijinglou/';
+		                    }
+		                }, 0);
+		            });
+		            myImage.addEventListener('mouseleave', function() {
+		                if (!myImage.matches(':active')) {
+		                    myImage.classList.remove('pressed');
+		                }
+		            });
+		        });
+		    </script>
+		
+	</body>
+</html>
